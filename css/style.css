@@ -16,3 +16,20 @@ html {
 :root {
   font-size: 62.5%
 }
+
+section {
+  border-radius:10%;
+  display: grid;
+  grid-template-rows: repeat(6, 7vh);
+  grid-template-columns: repeat(6, 7vh);
+  grid-gap: 0.5vmin;
+  padding: 3.5px;
+}
+
+div {
+  border: 2.7px ridge purple;
+}
+
+div.sqrs {
+  border-radius: 50%;
+}
