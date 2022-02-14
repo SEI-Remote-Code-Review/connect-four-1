@@ -81,7 +81,10 @@ let player2
 
 /*------------------------ Cached Element References ------------------------*/
 
-
+let resetbtn = document.querySelector('#reset')
+const mssgs = document.querySelectorAll('#mssgs')
+const body = document.querySelector('body')
+const sqrs = document.querySelectorAll('.sqrs')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
