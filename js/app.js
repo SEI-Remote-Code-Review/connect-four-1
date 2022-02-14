@@ -74,6 +74,9 @@ const winnerCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
+let winner 
+let player1
+let player2
 
 
 /*------------------------ Cached Element References ------------------------*/
