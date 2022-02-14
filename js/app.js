@@ -78,7 +78,6 @@ let winner
 let player1
 let player2
 
-
 /*------------------------ Cached Element References ------------------------*/
 
 let resetBtn = document.querySelector('#reset')
@@ -92,3 +91,15 @@ sqrs.forEach(square => square.addEventListener('click', handleClick))
 resetBtn.addEventListener('reset', innit)
 
 /*-------------------------------- Functions --------------------------------*/
+
+init()
+
+
+function init() {
+  winner = null
+  boardSqr = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,]
+  resetBtn.setAttribute('hidden', true)
+  mssgs.innerText = 'Player 1, you are up first!'
+  playerTurn = 1
+  render()
+}
