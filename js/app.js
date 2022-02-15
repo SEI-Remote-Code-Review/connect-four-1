@@ -118,14 +118,11 @@ function render(){
 }
 
 function getMssgs(){
-  mssgs.classList.remove('animated', "animate__jackInTheBox")
   if (isWinner === 'T'){
     mssgs.innerText = "OH-NO! Looks like we got a tie."
-    mssgs.classList.add('animate__animated', 'animate__wobble')
   }
   else if (isWinner !== null){
     mssgs.innerText = `${playerTurn === 1 ? 'Red' : 'Yellow'} won the game!`
-    mssgs.classList.add('animate__animated', 'animate__tada')
   }
   else {
     mssgs.innerText = `Next Turn: ${playerTurn === 1 ? 'Red' : 'Yellow'}`
