@@ -1,105 +1,120 @@
-/*-------------------------------- Constants --------------------------------*/
-
-const winnerCombos = [
-  [0, 1, 2, 3],
-  [7, 8, 9, 10],
-  [14, 15, 16, 17],
-  [21, 22, 23, 24],
-  [28, 29, 30, 31],
-  [35, 36, 37, 38],
-  [41, 40, 39, 38],
-  [34, 33, 32, 31],
-  [27, 26, 25, 24],
-  [20, 19, 18, 17],
-  [13, 12, 11, 10],
-  [6, 5, 4, 3],
-  [0, 7, 14, 21],
-  [41, 34, 27, 20],
-  [1, 8, 15, 22],
-  [40, 33, 26, 19],
-  [2, 9, 16, 23],
-  [39, 32, 25, 18],
-  [3, 10, 17, 24],
-  [38, 31, 24, 17],
-  [4, 11, 18, 25],
-  [37, 30, 23, 16],
-  [5, 12, 19, 26],
-  [36, 29, 22, 15],
-  [6, 13, 20, 27],
-  [35, 28, 21, 14],
-  [0, 8, 16, 24],
-  [41, 33, 25, 17],
-  [7, 15, 23, 31],
-  [34, 26, 18, 10],
-  [14, 22, 30, 38],
-  [27, 19, 11, 3],
-  [35, 29, 23, 17],
-  [6, 12, 18, 24],
-  [28, 22, 16, 10],
-  [13, 19, 25, 31],
-  [21, 15, 9, 3],
-  [20, 26, 32, 38],
-  [36, 30, 24, 18],
-  [5, 11, 17, 23],
-  [37, 31, 25, 19],
-  [4, 10, 16, 22],
-  [2, 10, 18, 26],
-  [39, 31, 23, 15],
-  [1, 9, 17, 25],
-  [40, 32, 24, 16],
-  [9, 17, 25, 33],
-  [8, 16, 24, 32],
-  [11, 17, 23, 29],
-  [12, 18, 24, 30],
-  [1, 2, 3, 4],
-  [5, 4, 3, 2],
-  [8, 9, 10, 11],
-  [12, 11, 10, 9],
-  [15, 16, 17, 18],
-  [19, 18, 17, 16],
-  [22, 23, 24, 25],
-  [26, 25, 24, 23],
-  [29, 30, 31, 32],
-  [33, 32, 31, 30],
-  [36, 37, 38, 39],
-  [40, 39, 38, 37],
-  [7, 14, 21, 28],
-  [8, 15, 22, 29],
-  [9, 16, 23, 30],
-  [10, 17, 24, 31],
-  [11, 18, 25, 32],
-  [12, 19, 26, 33],
-  [13, 20, 27, 34],
+/*---------------------------- Constants ------------------------------*/
+const winCombos = [
+  [0,1,2,3],
+  [6,7,8,9],
+  [12,13,14,15],
+  [18,19,20,21],
+  [24,25,26,27],
+  [30,31,32,33],
+  [1,2,3,4],
+  [7,8,9,10],
+  [13,14,15,16],
+  [19,20,21,22],
+  [25,26,27,28],
+  [31,32,33,34],
+  [2,3,4,5],
+  [8,9,10,11],
+  [14,15,16,17],
+  [20,21,22,23],
+  [26,27,28,29],
+  [32,33,34,35],
+  [0,6,12,18],
+  [1,7,13,19],
+  [2,8,14,20],
+  [3,9,15,21],
+  [4,10,16,22],
+  [5,11,17,23],
+  [6,12,18,24],
+  [7,13,19,25],
+  [8,14,20,26],
+  [9,15,21,27],
+  [10,16,22,28],
+  [11,17,23,29],
+  [12,18,24,30],
+  [13,19,25,31],
+  [14,20,26,32],
+  [15,21,27,33],
+  [16,22,28,34],
+  [17,23,29,35],
+  [8,13,3,18],
+  [24,19,14,9],
+  [19,14,9,4],
+  [30,25,20,15],
+  [25,20,15,10],
+  [20,15,10,5],
+  [11,16,21,26],
+  [16,21,26,31],
+  [17,22,27,32],
+  [2,9,16,23],
+  [1,8,15,22],
+  [8,15,22,29],
+  [0,7,14,21],
+  [7,14,21,28],
+  [14,21,28,35],
+  [6,13,20,27],
+  [13,20,27,34],
+  [12,19,26,33],
 ]
 
-/*---------------------------- Variables (state) ----------------------------*/
+/*-------------------------- Variables (state) ------------------------*/
 
-let winner 
-let player1
-let player2
+let playerTurn, isWinner, boardSqr
 
-/*------------------------ Cached Element References ------------------------*/
+/*--------------------- Cached Element References ---------------------*/
 
-let resetBtn = document.querySelector('#reset')
-const mssgs = document.querySelectorAll('#mssgs')
-const body = document.querySelector('body')
-const sqrs = document.querySelectorAll('.sqrs')
+const lightDarkBtn = document.querySelector("#light-dark-button")
+const replayBtn = document.querySelector("#replay")
+const sqrs = document.querySelectorAll(".sqrs")
+const mssgs = document.querySelector("#message")
+const body = document.querySelector("body")
 
-/*----------------------------- Event Listeners -----------------------------*/
+/*--------------------------- Event Listeners -------------------------*/
 
-sqrs.forEach(square => square.addEventListener('click', handleClick))
-resetBtn.addEventListener('reset', innit)
+replayBtn.addEventListener("reset", init)
+sqrs.forEach(square => square.addEventListener("click", handleClick))
 
-/*-------------------------------- Functions --------------------------------*/
+/*------------------------------ Functions ----------------------------*/
 
 init()
 
 
-function init() {
-  winner = null
-  boardSqr = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,]
-  resetBtn.setAttribute('hidden', true)
-  mssgs.innerText = 'Player 1, you are up first!'
+function init(){
+  isWinner = null
+  boardSqr = new Array(36).fill(null)
   playerTurn = 1
+  replayBtn.setAttribute("hidden", true)
   render()
+  mssgs.innerText = "Player 1, you are up first!"
+}
+
+
+function handleClick (evt){
+  let index = parseInt(evt.target.id)
+  if (isWinner !== null || boardSqr[index] !== null){
+    return
+  }
+  else{
+    let add = 30
+    while (boardSqr[index + add] !== null){
+      add -= 6
+    }
+    boardSqr[index + add] = playerTurn
+  }
+  playerTurn *= -1
+  replayBtn.removeAttribute("hidden")
+  render()
+}
+
+
+function render(){
+  for (let i = 0; i < boardSqr.length; i++){
+    if (boardSqr[i] === 1){
+      sqrs[i].style.background = "Red"
+    }
+    else if (boardSqr[i] === -1){
+      sqrs[i].style.background = "Yellow"
+    }
+  }
+  getWinner()
+  getMssgs()
 }
