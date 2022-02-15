@@ -87,7 +87,6 @@ function init(){
   mssgs.innerText = "Player 1, you are up first!"
 }
 
-
 function handleClick (evt){
   let index = parseInt(evt.target.id)
   if (isWinner !== null || boardSqr[index] !== null){
@@ -105,7 +104,6 @@ function handleClick (evt){
   render()
 }
 
-
 function render(){
   for (let i = 0; i < boardSqr.length; i++){
     if (boardSqr[i] === 1){
@@ -117,4 +115,19 @@ function render(){
   }
   getWinner()
   getMssgs()
+}
+
+function getMssgs(){
+  mssgs.classList.remove('animated', "animate__jackInTheBox")
+  if (isWinner === 'T'){
+    mssgs.innerText = "OH-NO! Looks like we got a tie."
+    mssgs.classList.add('animate__animated', 'animate__wobble')
+  }
+  else if (isWinner !== null){
+    mssgs.innerText = `${playerTurn === 1 ? 'Red' : 'Yellow'} won the game!`
+    mssgs.classList.add('animate__animated', 'animate__tada')
+  }
+  else {
+    mssgs.innerText = `Next Turn: ${playerTurn === 1 ? 'Red' : 'Yellow'}`
+  }
 }
