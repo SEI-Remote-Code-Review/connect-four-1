@@ -81,6 +81,7 @@ darkModeBtn.addEventListener("click", toggleLightDark)
 init()
 
 
+
 function init(){
   forWinner = null
   boardSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
@@ -105,6 +106,27 @@ function handleClick (evt){
   playerTurn *= -1
   restartBtn.removeAttribute("hidden")
   render()
+}
+
+function findWinner (){
+  for (let i = 0; i < winningCombos.length; i++){
+    let total = 0
+    let combo = winningCombos[i]
+    for (let i = 0; i < combo.length; i++){
+      total += boardSlots[combo[i]]
+    }
+    let winValue = Math.abs(total)
+    if(winValue === 4){
+      forWinner = boardSlots[combo[i]]
+      return forWinner
+    }
+    else if(winValue !== 4){
+      if(boardSlots.includes(null) === false){
+        forWinner = "T"
+      }
+      findMssgs
+    }
+  }
 }
 
 function findMssgs(){
