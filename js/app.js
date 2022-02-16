@@ -153,3 +153,7 @@ function render(){
   findWinner()
   findMssgs()
 }
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
