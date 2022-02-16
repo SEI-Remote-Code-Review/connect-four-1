@@ -74,6 +74,7 @@ const darkModeBtn = document.querySelector("#dark-mode-button")
 
 slots.forEach(circles => circles.addEventListener("click", handleClick))
 restartBtn.addEventListener("restart", init)
+darkModeBtn.addEventListener("click", toggleLightDark)
 
 /*------------------------------ Functions ----------------------------*/
 
