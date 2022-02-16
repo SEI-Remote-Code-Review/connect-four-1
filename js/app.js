@@ -68,6 +68,7 @@ const slots = document.querySelectorAll(".slots")
 const mssgs = document.querySelector("#message")
 const restartBtn = document.querySelector("#restart")
 const body = document.querySelector("body")
+const darkModeBtn = document.querySelector("#dark-mode-button")
 
 /*--------------------------- Event Listeners -------------------------*/
 
