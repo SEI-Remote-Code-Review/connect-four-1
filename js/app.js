@@ -1,5 +1,5 @@
 /*---------------------------- Constants ------------------------------*/
-const winCombos = [
+const winningCombos = [
   [0,1,2,3],
   [6,7,8,9],
   [12,13,14,15],
@@ -58,20 +58,21 @@ const winCombos = [
 
 /*-------------------------- Variables (state) ------------------------*/
 
-let playerTurn, isWinner, boardSqr
+let boardSlots
+let playerTurn 
+let forWinner 
 
 /*--------------------- Cached Element References ---------------------*/
 
-const lightDarkBtn = document.querySelector("#light-dark-button")
-const replayBtn = document.querySelector("#replay")
-const sqrs = document.querySelectorAll(".sqrs")
+const slots = document.querySelectorAll(".slots")
 const mssgs = document.querySelector("#message")
+const restartBtn = document.querySelector("#restart")
 const body = document.querySelector("body")
 
 /*--------------------------- Event Listeners -------------------------*/
 
-replayBtn.addEventListener("reset", init)
-sqrs.forEach(square => square.addEventListener("click", handleClick))
+slots.forEach(circles => circles.addEventListener("click", handleClick))
+restartBtn.addEventListener("restart", init)
 
 /*------------------------------ Functions ----------------------------*/
 
@@ -79,52 +80,52 @@ init()
 
 
 function init(){
-  isWinner = null
-  boardSqr = new Array(36).fill(null)
+  forWinner = null
+  boardSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   playerTurn = 1
-  replayBtn.setAttribute("hidden", true)
+  restartBtn.setAttribute("hidden", true)
+  mssgs.innerText = "Player 1 (RED) goes first!"
   render()
-  mssgs.innerText = "Player 1, you are up first!"
 }
 
 function handleClick (evt){
   let index = parseInt(evt.target.id)
-  if (isWinner !== null || boardSqr[index] !== null){
+  if (forWinner !== null || boardSlots[index] !== null){
     return
   }
   else{
     let add = 30
-    while (boardSqr[index + add] !== null){
+    while (boardSlots[index + add] !== null){
       add -= 6
     }
-    boardSqr[index + add] = playerTurn
+    boardSlots[index + add] = playerTurn
   }
   playerTurn *= -1
-  replayBtn.removeAttribute("hidden")
+  restartBtn.removeAttribute("hidden")
   render()
 }
 
-function render(){
-  for (let i = 0; i < boardSqr.length; i++){
-    if (boardSqr[i] === 1){
-      sqrs[i].style.background = "Red"
-    }
-    else if (boardSqr[i] === -1){
-      sqrs[i].style.background = "Yellow"
-    }
+function findMssgs(){
+  if (forWinner === 'T'){
+    mssgs.innerText = "OH-NO! Looks like we've got a tie."
   }
-  getWinner()
-  getMssgs()
-}
-
-function getMssgs(){
-  if (isWinner === 'T'){
-    mssgs.innerText = "OH-NO! Looks like we got a tie."
-  }
-  else if (isWinner !== null){
-    mssgs.innerText = `${playerTurn === 1 ? 'Red' : 'Yellow'} won the game!`
+  else if (forWinner !== null){
+    mssgs.innerText = `${playerTurn === 1 ? 'Player 2 (YELLOW)' : 'Player 1 (RED)'} wins the game!`
   }
   else {
-    mssgs.innerText = `Next Turn: ${playerTurn === 1 ? 'Red' : 'Yellow'}`
+    mssgs.innerText = `Next: ${playerTurn === 1 ? 'Player 1 (RED)' : 'Player 2 (YELLOW)'}`
   }
+}
+
+function render(){
+  for (let i = 0; i < boardSlots.length; i++){
+    if (boardSlots[i] === 1){
+      slots[i].style.background = "Red"
+    }
+    else if (boardSlots[i] === -1){
+      slots[i].style.background = "Yellow"
+    }
+  }
+  findWinner()
+  findMssgs()
 }

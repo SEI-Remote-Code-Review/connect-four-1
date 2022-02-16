@@ -27,9 +27,9 @@ section {
 }
 
 div {
-  border: 2.7px ridge purple;
+  border: 2.7px ridge burlywood;
 }
 
-div.sqrs {
+div.slots {
   border-radius: 50%;
 }
