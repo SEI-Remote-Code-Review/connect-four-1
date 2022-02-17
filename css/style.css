@@ -39,6 +39,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 85vh;
 }
 
 h1 {
