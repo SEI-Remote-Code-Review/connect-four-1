@@ -27,7 +27,7 @@ section {
 }
 
 div {
-  border: 2.7px ridge black;
+  border: 3.5px ridge black;
 }
 
 div.slots {
@@ -44,11 +44,12 @@ body {
 }
 
 h1 {
-  font-family: "Audiowide", sans-serif;
+  font-family: 'Permanent Marker', cursive;
   font-size: 50px;
   font-weight: bold;
 }
 
 h2 {
-  font-family: "Audiowide", sans-serif;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
 }

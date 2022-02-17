@@ -1,10 +1,9 @@
 # Connect Four JR
 
 
-
 # Background
 
-Welcome to my game Connect Four JR! Before we dive in, let's take a step back and remember the early days off Connect Four. It was in 1974 when Milton Bradley brought the plastic version of Connect Four to the masses creating a cultural phenomenon. Howard Wexler, a toy inventor, is given credit for creating the Connect Four we all grew up playing. Milton Bradly was eventually bought out by Hasbro who continues to sell the game.
+Welcome to my game, Connect Four JR! Before we dive in, let's take a step back and remember the early days off Connect Four. It was in 1974 when Milton Bradley brought the plastic version of Connect Four to the masses creating a cultural phenomenon. Howard Wexler, a toy inventor, is given credit for creating the Connect Four we all grew up playing. Milton Bradly was eventually bought out by Hasbro who continues to sell the game.
 
 # Getting Stared
 
@@ -19,8 +18,7 @@ If you're the first player to get four of your colored checkers in a row - horiz
 
  <a href="https://jruizwk.github.io/connect-four/">LETS'S PLAY NOW!!</a>
 
-
-# PONIT **A** TO POINT **B**
+# POINT A TO POINT B
 
 <img src="./assets/Screen_Shot_2022-02-10_at_1.40.04_PM.png" alt="Wireframe">
 
@@ -34,10 +32,10 @@ If you're the first player to get four of your colored checkers in a row - horiz
 
    ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-
 # Credits
 
 1. <a href="https://github.com/Ileriayo/markdown-badges">README.md Badges</a>
+2. <a href="https://fonts.google.com/">Google Fonts</a>
 
 # Icebox (Future Enhacments)
 
