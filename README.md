@@ -3,7 +3,7 @@
 
 # Background
 
-**WELCOME TO MY GAME!!!** Before we dive in, let's take a step back and remember the early days off Connect Four. It was in 1974 when Milton Bradley brought the plastic version of Connect Four to the masses creating a cultural phenomenon. Howard Wexler, a toy inventor, is given credit for creating the Connect Four we all grew up playing. Milton Bradly was eventually bought out by Hasbro who continues to sell the game.
+**WELCOME TO MY GAME!!!!** Before we dive in, let's take a step back and remember the early days off Connect Four. It was in 1974 when Milton Bradley brought the plastic version of Connect Four to the masses creating a cultural phenomenon. Howard Wexler, a toy inventor, is given credit for creating the Connect Four we all grew up playing. Milton Bradly was eventually bought out by Hasbro who continues to sell the game.
 
 # Getting Stared
 

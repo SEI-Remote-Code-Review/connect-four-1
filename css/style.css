@@ -23,7 +23,31 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 85vh;
-  background-image: linear-gradient(to right, red , yellow);
+  --body-bg: linear-gradient(to right, red , yellow);
+  background-image: var(--body-bg);
+  --body-color: black;
+  --dark-mode-button-content: "Dark Mode"; 
+}
+
+body.dark{
+  --body-bg: #22232b;
+  --body-color: lightgray;
+  --dark-mode-button-content: "Light Mode"; 
+  background: var(--body-bg);
+  color: var(--body-color);
+}
+
+.btn {
+  color: var(--btn-color);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  background-color: transparent;
+  border-radius: 15%;
+  border: var(--btn-border);
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  padding-top: 50px;
 }
 
 div {
@@ -32,6 +56,10 @@ div {
 
 div.slots {
   border-radius: 50%;
+}
+
+div:hover {
+  background-image: linear-gradient(to right, red , yellow);
 }
 
 h1 {
