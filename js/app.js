@@ -79,7 +79,12 @@ darkModeBtn.addEventListener("click", toggleLightDark)
 /*------------------------------ Functions ----------------------------*/
 
 init()
-
+handleClick()
+findWinner()
+findMssgs()
+render()
+toggleLightDark()
+checkDarkPref()
 
 
 function init(){
@@ -122,7 +127,7 @@ function findWinner (){
     }
     else if(winValue !== 4){
       if(boardSlots.includes(null) === false){
-        forWinner = "T"
+        forWinner = ""
       }
       findMssgs
     }
@@ -130,14 +135,14 @@ function findWinner (){
 }
 
 function findMssgs(){
-  if (forWinner === 'T'){
+  if (forWinner === ""){
     mssgs.innerText = "OH-NO! Looks like we've got a tie."
   }
   else if (forWinner !== null){
-    mssgs.innerText = `${playerTurn === 1 ? 'Player 2 (YELLOW)' : 'Player 1 (RED)'} wins the game!`
+    mssgs.innerText = `${playerTurn === 1 ? "Player 2 (YELLOW)" : "Player 1 (RED)"} wins the game!`
   }
   else {
-    mssgs.innerText = `Next: ${playerTurn === 1 ? 'Player 1 (RED)' : 'Player 2 (YELLOW)'}`
+    mssgs.innerText = `Next: ${playerTurn === 1 ? "Player 1 (RED)" : "Player 2 (YELLOW)"}`
   }
 }
 
