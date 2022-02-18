@@ -17,13 +17,13 @@ html {
   font-size: 62.5%
 }
 
-section {
-  border-radius:10%;
-  display: grid;
-  grid-template-rows: repeat(6, 7vh);
-  grid-template-columns: repeat(6, 7vh);
-  grid-gap: 0.5vmin;
-  padding: 3.5px;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  background-image: linear-gradient(to right, red , yellow);
 }
 
 div {
@@ -32,15 +32,6 @@ div {
 
 div.slots {
   border-radius: 50%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-  background-image: linear-gradient(to right, red , yellow);
 }
 
 h1 {
@@ -52,4 +43,13 @@ h1 {
 h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 25px;
+}
+
+section {
+  border-radius:10%;
+  display: grid;
+  grid-template-rows: repeat(6, 7vh);
+  grid-template-columns: repeat(6, 7vh);
+  grid-gap: 0.5vmin;
+  padding: 3.5px;
 }

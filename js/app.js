@@ -65,7 +65,7 @@ let forWinner
 /*--------------------- Cached Element References ---------------------*/
 
 const slots = document.querySelectorAll(".slots")
-const mssgs = document.querySelector("#message")
+const mssgs = document.querySelector("#messages")
 const restartBtn = document.querySelector("#restart")
 const body = document.querySelector("body")
 const darkModeBtn = document.querySelector("#dark-mode-button")
