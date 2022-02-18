@@ -44,3 +44,4 @@ If you're the first player to get four of your colored checkers in a row - horiz
 2. The option to choose who wants to go first.
 3. Add confetti when a player has won the game.
 4. Add sound effects.
+5. Ability to play with an AI.
