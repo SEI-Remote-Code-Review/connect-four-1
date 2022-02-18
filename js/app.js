@@ -92,8 +92,8 @@ function init(){
   boardSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   playerTurn = 1
   restartBtn.setAttribute("hidden", true)
-  mssgs.innerText = "Player 1 (RED) goes first!"
   render()
+  mssgs.innerText = "Player 1 (RED) goes first!"
 }
 
 function handleClick (evt){
