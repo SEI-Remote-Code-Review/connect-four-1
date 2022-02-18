@@ -136,7 +136,7 @@ function findWinner (){
 
 function findMssgs(){
   if (forWinner === ""){
-    mssgs.innerText = "OH-NO! Looks like we've got a tie."
+    mssgs.innerText = "THAT'S NO FUN! Looks like we've got a tie."
   }
   else if (forWinner !== null){
     mssgs.innerText = `${playerTurn === 1 ? "Player 2 (YELLOW)" : "Player 1 (RED)"} wins the game!`
