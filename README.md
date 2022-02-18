@@ -22,7 +22,7 @@ If you're the first player to get four of your colored checkers in a row - horiz
 
 <img src="./assets/Screen_Shot_2022-02-10_at_1.40.04_PM.png" alt="Wireframe">
 
-<img src="./assets/Screen%20Shot%202022-02-17%20at%201.55.37%20PM.png" alt="Finish">
+<img src="./assets/finishpro.png" alt="Finish">
 
 # Technologies Used
 
