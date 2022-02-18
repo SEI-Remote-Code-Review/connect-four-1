@@ -36,10 +36,11 @@ If you're the first player to get four of your colored checkers in a row - horiz
 
 1. <a href="https://github.com/Ileriayo/markdown-badges">README.md Badges</a>
 2. <a href="https://fonts.google.com/">Google Fonts</a>
+3. <a href="https://animate.style/">Animate.CSS</a>
 
 # Icebox (Future Enhacments)
 
 1. The option to choose which colored checker you want to play with.
 2. The option to choose who wants to go first.
 3. Add confetti when a player has won the game.
-4. The ability to play with an AI.
+4. Add sound effects.
