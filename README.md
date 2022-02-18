@@ -45,3 +45,4 @@ If you're the first player to get four of your colored checkers in a row - horiz
 3. Add confetti when a player has won the game.
 4. Add sound effects.
 5. Ability to play with an AI.
+6. Polish LightDark Mode feature.
